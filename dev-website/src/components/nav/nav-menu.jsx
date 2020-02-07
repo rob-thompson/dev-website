@@ -53,14 +53,15 @@ function NavMenu() {
                         <a href="/#">Home</a>
                     </li>
                     <li className="link">
-                        <a href="/#">About</a>
+                        <a href="/#">Algorithm Visualizers</a>
                         <ol>
-                            <li><a href="/#">designers</a></li>
-                            <li><a href="/#">developers</a></li>
+                            <li><a href="/#">Sorts</a></li>
+                            <li><a href="/#">Searches</a></li>
+                            <li><a href="/#">Machine Learning</a></li>
                         </ol>
                     </li>
                     <li className="link">
-                        <a href="/#">Work</a>
+                        <a href="/#">Other Projects?</a>
                         <ol>
                             <li><a href="/#">web</a></li>
                             <li><a href="/#">graphic </a></li>
@@ -71,22 +72,7 @@ function NavMenu() {
                         <a href="/#">Contact</a>
                         <ol>
                             <li><a href="/#">Email</a></li>
-                            <li><a href="/#">Social</a></li>
-                        </ol>
-                    </li>
-                    <li className="link">
-                        <a href="/#">follow me</a>
-                        <ol>
-                            <li>
-                                <a href="/#">
-                                    Twitter <i className="fab fa-twitter"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/#">
-                                    Codepen <i className="fab fa-codepen"></i>
-                                </a>
-                            </li>
+                            <li><a href="/#">LinkedIn</a></li>
                         </ol>
                     </li>
                 </ul>
