@@ -7,6 +7,6 @@ const Home = (props) => {
     useEffect(() => {
     }, [filter]);
 
-    return (<h1>{filter}</h1>);
+    return (<h1>Url: {filter}</h1>);
 }
 export default Home;
