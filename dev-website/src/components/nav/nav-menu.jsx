@@ -68,12 +68,12 @@ const NavMenu = () => {
             handleLink(e);
     };
 
-    const handleLink = (e) => {
+    const handleLink = (e, isKeyboardEvent = false) => {
         let link = e.target;
         link.blur();
         let hoverEl = navLinksContainer.querySelector(".hover-el");
         hoverEl.style.setProperty("opacity", "0");
-        toggleSubmenu(link);
+        toggleSubmenu(link, isKeyboardEvent);
     };
 
     const menuButtonClick = (isKeyboardEvent = false) => {
@@ -92,19 +92,19 @@ const NavMenu = () => {
         setMenuOpen(!menuOpen);
     };
 
-    const toggleSubmenu = (el) => {
+    const toggleSubmenu = (el, isKeyboardEvent = false) => {
         setSubMenuOpen(!subMenuOpen);
         let subMenu = nav.querySelector(".sub-menu");
         if (el.children[1]) {
             removeTopMenuTabs();
-            createSubmenu(el);
+            createSubmenu(el, isKeyboardEvent);
         } else if (nav.contains(subMenu)) {
             addTopMenuTabs();
             removeSubmenu();
         }
     };
 
-    const createSubmenu = (el) => {
+    const createSubmenu = (el, isKeyboardEvent = false) => {
         let subMenuContainer = document.createElement("div");
         subMenuContainer.className = "sub-menu";
         let subMenuItem = el.children[1].cloneNode(true);
@@ -124,9 +124,11 @@ const NavMenu = () => {
                 item.classList.add("on-menu");
                 if (!index) item.focus();
             });
-            setTimeout(() =>
-                focusFirstSubMenuItem()
-                , 200);
+            if (isKeyboardEvent) {
+                setTimeout(() =>
+                    focusFirstSubMenuItem()
+                    , 200);
+            }
         }, 200);
     };
 
@@ -165,7 +167,7 @@ const NavMenu = () => {
             }
             else {
                 setSelectedTopMenuItem(e.target);
-                handleLink(e);
+                handleLink(e, true);
             }
         }
     };
