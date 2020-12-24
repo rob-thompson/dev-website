@@ -6,9 +6,11 @@
 .App {
   text-align: center;
   background-color: #282c34;
-  background-image: url("https://source.unsplash.com/1920x1080/?bright,rainbow,wallpaper");
+  background-image: url("https://images.unsplash.com/photo-1608500479600-212f8886141a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+  // background-image: url("https://source.unsplash.com/1920x1080/?dark,black");
+  // background-image: url("./nate-kadlac-ASsJYPgtLnc-unsplash.webp");
 	background-size: cover;
-	overflow: hidden;
+	overflow-x: hidden;
   min-height: 100vh;
   display: flex;
   font-size: calc(10px + 2vmin);
@@ -23,19 +25,28 @@ body {
   overflow: hidden;
   z-index: 1;
 }
-body::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+.visuallyhidden { 
+  clip: rect(1px, 1px, 1px, 1px);  
+  height: 1px; 
+  overflow: hidden;
+  position: absolute !important;
+  white-space: nowrap;
+  width: 1px;
 }
+
+// body::after {
+//   content: "";
+//   position: absolute;
+//   left: 0;
+//   top: 0;
+//   right: 0;
+//   bottom: 0;
+//   background: rgba(0, 0, 0, 0.5);
+// }
 
 h1 {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: rgba(255, 255, 255, 0.8);
@@ -43,6 +54,5 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 3px;
   text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
-  white-space: nowrap;
   z-index: 3;
 }
