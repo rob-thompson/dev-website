@@ -1,24 +1,33 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import NavMenu from './components/nav/nav-menu.jsx';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 const Home = React.lazy(() => import('./components/pages/home/home.jsx'));
+const Spinner = React.lazy(() => import('./components/shared-components/spinner/spinner.jsx'));
 
 
-function App() {
-  console.clear();
+
+const App = () => {
   return (
     <div className="App">
-      <Router>
-        <NavMenu />
-        <React.Suspense fallback={"Loading..."}>
-          <Switch>
-            <Route path="/home/:filter">
-              <Home />
-            </Route>
-          </Switch>
-        </React.Suspense>
-      </Router>
+      <React.Suspense fallback={'asdf'}>
+        <Router>
+          <NavMenu />
+          <React.Suspense fallback={<Spinner />}>
+            <Switch>
+              <Route path="/home/:filter">
+                <Home />
+              </Route>
+              <Route path="/home">
+                <Home />
+              </Route>
+              <Route path="/animations">
+                <Spinner />
+              </Route>
+            </Switch>
+          </React.Suspense>
+        </Router>
+      </React.Suspense>
     </div>
   );
 }
