@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:700|IBM+Plex+Sans:500&display=swap');
+@import 'global-slider-styles.scss';
+
+// html, body {
+//   height: 100%;
+// }
+
+// body {
+//   font-family: 'IBM Plex Sans', sans-serif;
+//   background-color: var(--color-secondary);
+// }
+
+// #app {
+//   align-items: center;
+//   display: flex;
+//   height: 100%;
+//   justify-content: center;
+//   overflow-x: hidden;
+//   width: 100%;
+// }
+
+// =========================
+// Slider
+// =========================
+
+.slider {
+  --slide-size: 50vmin;
+  --slide-margin: 4vmin;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    top: 40%;
+    left: 30%;
+    overflow-y: visible;
+    width: 100%;
+  
+  height: var(--slide-size);
+  margin: 0 auto;
+  position: absolute;
+  width: var(--slide-size);
+}
+
+.slider__wrapper {
+  display: flex;
+  margin: 0 calc(var(--slide-margin) * -1);
+  position: absolute;
+  transition: transform var(--base-duration) cubic-bezier(0.25, 1, 0.35, 1);
+}
