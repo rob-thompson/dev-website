@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './nav.css';
+import './nav.scss';
 import { Link } from "react-router-dom";
 
 let mouseMovePropsSet = false;
@@ -249,6 +249,7 @@ const NavMenu = () => {
                             Personal Tools
                             </Link>
                         <ol>
+                            <li><Link to="/animations">Animations</Link></li>
                             <li><Link to="/#">Online Text Editor</Link></li>
                             <li><Link to="/#">Phasmo Tool</Link></li>
                             <li><Link to="/#">To-Do List</Link></li>
